@@ -27,7 +27,7 @@ extension:
     action: modify-request-header
     modify:
       - baidu Paidu
-      - (\r\n)Cookie:.+(\r\n) $1Cookie: newCookie$2
+      - (\n)Cookie:.+(\n) $1Cookie: newCookie$2
     hosts:
       - +.baidu.com
     match:
@@ -38,7 +38,7 @@ extension:
     action: modify-request-boby
     modify:
       - old new
-      - (\r\n)key:.+(\r\n) $1key: new$2
+      - (\n)key:.+(\n) $1key: new$2
     hosts:
       - +.baidu.com
     match:
@@ -49,7 +49,7 @@ extension:
     action: modify-response-header
     modify:
       - baidu Paidu
-      - (\r\n)key:.+(\r\n) $1key: newCookie$2
+      - (\n)key:.+(\n) $1key: newCookie$2
     hosts:
       - +.baidu.com
     match:
@@ -60,7 +60,7 @@ extension:
     action: modify-response-boby
     modify:
       - baidu Paidu
-      - (\r\n)key:.+(\r\n) $1key: new$2
+      - (\n)key:.+(\n) $1key: new$2
     hosts:
       - +.baidu.com
     match:
