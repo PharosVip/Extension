@@ -24,10 +24,12 @@ extension:
 
   - name: "modify http request header"
     type: mitm
-    action: modify-request-header
+    action: modify-req-header
     modify:
-      - baidu Paidu
-      - (\n)Cookie:.+(\n) Cookie: newCookie
+      - replace: baidu
+        with: Paidu
+      - replace:(\n)Cookie:.+(\n)
+        with: Cookie: newCookie
     hosts:
       - +.baidu.com
     match:
@@ -35,10 +37,12 @@ extension:
 
   - name: "modify http request boby"
     type: mitm
-    action: modify-request-boby
+    action: modify-req-boby
     modify:
-      - old new
-      - (\n)key:.+(\n) key: new
+      - replace: old
+        with: new
+      - replace: (\n)key:.+(\n)
+        with: "key: new"
     hosts:
       - +.baidu.com
     match:
@@ -46,10 +50,12 @@ extension:
 
   - name: "modify http response header"
     type: mitm
-    action: modify-response-header
+    action: modify-resp-header
     modify:
-      - baidu Paidu
-      - (\n)key:.+(\n) key: newCookie
+      - replace: baidu
+        with: Paidu
+      - replace: (\n)key:.+(\n)
+        with: "key: newCookie"
     hosts:
       - +.baidu.com
     match:
@@ -57,10 +63,12 @@ extension:
 
   - name: "modify http response boby"
     type: mitm
-    action: modify-response-boby
+    action: modify-resp-boby
     modify:
-      - baidu Paidu
-      - (\n)key:.+(\n) key: new
+      - replace: baidu
+        with: Paidu
+      - replace: (\n)key:.+(\n)
+        with: "key: new"
     hosts:
       - +.baidu.com
     match:
