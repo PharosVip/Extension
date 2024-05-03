@@ -73,6 +73,15 @@ extension:
       - +.baidu.com
     match:
       - ^http?://www\.baidu\.com
+
+  - name: "modify http response boby with javascript"
+    type: mitm
+    action: modify-resp-boby-js
+    path: "javascript code path"
+    hosts:
+      - +.baidu.com
+    match:
+      - ^http?://www\.baidu\.com
 ```
 ## TODO
 - [ ] modify http request and response with javascript
