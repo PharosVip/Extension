@@ -76,7 +76,6 @@ extension:
 
   - name: "modify http response boby with javascript"
     type: mitm
-    id: 1
     action: modify-resp-boby-js
     path: "javascript code path"
     hosts:
