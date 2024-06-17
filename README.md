@@ -74,9 +74,9 @@ extension:
     match:
       - ^http?://www\.baidu\.com
 
-  - name: "modify http response boby with javascript"
+  - name: "modify http response body with javascript"
     type: mitm
-    action: modify-resp-boby-js
+    action: modify-resp-body-js
     path: "javascript code path"
     hosts:
       - +.baidu.com
