@@ -73,6 +73,15 @@ extension:
       - +.baidu.com
     match:
       - ^http?://www\.baidu\.com
+      
+  - name: "modify http request with javascript"
+    type: mitm
+    action: modify-req-js
+    path: "javascript code path"
+    hosts:
+      - +.baidu.com
+    match:
+      - ^http?://www\.baidu\.com
 
   - name: "modify http response body with javascript"
     type: mitm
